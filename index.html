@@ -4,6 +4,7 @@
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <title>The Collective — Shaping Leaders. Advancing Economies.</title>
+<link rel="stylesheet" href="https://cdn.plyr.io/3.7.8/plyr.css" />
 <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,600;1,400&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
 <style>
 :root {
@@ -423,7 +424,13 @@ footer {
     .cta-body { font-size: 14px; margin-bottom: 32px; }
   }
 
-</style>
+.plyr__control--overlaid { background: #fff !important; color: #000 !important; }
+.plyr__control--overlaid:hover { background: rgba(255,255,255,0.85) !important; }
+.plyr--full-ui input[type=range] { color: #fff !important; }
+.plyr__progress input[type=range] { color: #fff !important; }
+.plyr__volume input[type=range] { color: #fff !important; }
+.plyr__controls { background: linear-gradient(transparent, rgba(0,0,0,0.6)) !important; }
+.plyr__control svg { fill: #fff !important; }
 </head>
 <body>
 
@@ -469,12 +476,9 @@ footer {
 <div class="vsl-wrap">
   <div class="vsl-box" id="vslBox">
 
-    <!-- Plyr CSS -->
-    <link rel="stylesheet" href="https://cdn.plyr.io/3.7.8/plyr.css" />
-
-    <div class="plyr__video-embed" id="player" style="width: 100%; height: 100%; position: absolute; top: 0; left: 0; border-radius: 8px;">
+<div class="plyr__video-embed" id="player">
       <iframe
-        src="https://www.youtube-nocookie.com/embed/HwWODug5Gcg?origin=https://thecollective696.github.io&iv_load_policy=3&modestbranding=1&playsinline=1&showinfo=0&rel=0&enablejsapi=1"
+        src="https://www.youtube-nocookie.com/embed/hyPZbQILdmQ?origin=https://thecollective696.github.io&iv_load_policy=3&modestbranding=1&playsinline=1&showinfo=0&rel=0&enablejsapi=1"
         allowfullscreen
         allowtransparency
         allow="autoplay"
@@ -488,15 +492,6 @@ footer {
   </div>
 </div>
 
-<!-- Plyr JS — place before closing </body> -->
-<script src="https://cdn.plyr.io/3.7.8/plyr.js"></script>
-<script>const player = new Plyr('#player');</script>
-        <div class="vsl-corner tl"></div>
-        <div class="vsl-corner tr"></div>
-        <div class="vsl-corner bl"></div>
-        <div class="vsl-corner br"></div>
-      </div>
-    </div>
     <p class="hero-body">An exclusive 45-day disciplined transition designed to align your Impactful Voice with the gravity of your economic mission.</p>
     <div class="hero-pills">
       <span class="hero-pill">45 Days</span>
@@ -917,5 +912,11 @@ seal.addEventListener('click', () => {
   }, 2450);
 });
 </script>
-</body>
+<script src="https://cdn.plyr.io/3.7.8/plyr.js"></script>
+<script>
+  const player = new Plyr('#player', {
+    youtube: { noCookie: true, rel: 0, showinfo: 0, iv_load_policy: 3, modestbranding: 1 },
+    controls: ['play-large','play','progress','current-time','mute','volume','fullscreen']
+  });
+</script>
 </html>

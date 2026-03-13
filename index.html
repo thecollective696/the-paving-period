@@ -465,17 +465,32 @@ footer {
     <div class="hero-editorial">but it is scaled through Trust.</div>
     <div class="hero-rule"></div>
 
-    <!-- VSL VIDEO -->
-    <div class="vsl-wrap">
-      <div class="vsl-box" id="vslBox">
-        <video 
-          id="main-video"
-          style="width: 100%; height: 100%; position: absolute; top: 0; left: 0; border-radius: 8px;" 
-          controls 
-          preload="metadata">
-          <source src="https://assets.cdn.filesafe.space/ikafrDSYUL904C8OYC3s/media/69b2f09b74ad4b08a41e0ecd.mp4" type="video/mp4">
-          Your browser does not support the video tag.
-        </video>
+<!-- VSL VIDEO -->
+<div class="vsl-wrap">
+  <div class="vsl-box" id="vslBox">
+
+    <!-- Plyr CSS -->
+    <link rel="stylesheet" href="https://cdn.plyr.io/3.7.8/plyr.css" />
+
+    <div class="plyr__video-embed" id="player" style="width: 100%; height: 100%; position: absolute; top: 0; left: 0; border-radius: 8px;">
+      <iframe
+        src="https://www.youtube-nocookie.com/embed/HwWODug5Gcg?origin=https://thecollective696.github.io&iv_load_policy=3&modestbranding=1&playsinline=1&showinfo=0&rel=0&enablejsapi=1"
+        allowfullscreen
+        allowtransparency
+        allow="autoplay"
+      ></iframe>
+    </div>
+
+    <div class="vsl-corner tl"></div>
+    <div class="vsl-corner tr"></div>
+    <div class="vsl-corner bl"></div>
+    <div class="vsl-corner br"></div>
+  </div>
+</div>
+
+<!-- Plyr JS — place before closing </body> -->
+<script src="https://cdn.plyr.io/3.7.8/plyr.js"></script>
+<script>const player = new Plyr('#player');</script>
         <div class="vsl-corner tl"></div>
         <div class="vsl-corner tr"></div>
         <div class="vsl-corner bl"></div>
